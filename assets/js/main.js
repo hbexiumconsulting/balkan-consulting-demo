@@ -28,7 +28,7 @@
         var open = function () { menu.hidden = false; requestAnimationFrame(function () { menu.classList.add("is-open"); }); burger.setAttribute("aria-expanded", "true"); document.body.style.overflow = "hidden"; };
         var close = function () { menu.classList.remove("is-open"); burger.setAttribute("aria-expanded", "false"); document.body.style.overflow = ""; setTimeout(function () { menu.hidden = true; }, 350); };
         burger.addEventListener("click", function () { burger.getAttribute("aria-expanded") === "true" ? close() : open(); });
-        menu.addEventListener("click", function (e) { if (e.target.closest("a")) close(); });
+        menu.addEventListener("click", function (e) { if (e.target.closest("a") || e.target.closest(".menu__close")) close(); });
         document.addEventListener("keydown", function (e) { if (e.key === "Escape" && burger.getAttribute("aria-expanded") === "true") close(); });
     }
 

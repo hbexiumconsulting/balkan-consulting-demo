@@ -96,24 +96,42 @@
                 <a href="/balkan-consulting-demo/en/services" hreflang="en" lang="en" class="is-active">EN</a>
             </div>
             <a class="btn btn--primary nav__cta" href="/balkan-consulting-demo/en/contact">Start my project</a>
-            <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span></button>
+            <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+                <span class="burger__lines" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span class="burger__txt">Menu</span>
+            </button>
         </div>
     </div>
 </header>
 
 <div class="menu" id="menu" hidden>
-    <div class="shell">
-        <nav aria-label="Main navigation">
-            <ul class="menu__list">
-                <li><a class="menu__link" href="/balkan-consulting-demo/en/">Home</a></li>
-                                    <li><a class="menu__link" href="/balkan-consulting-demo/en/firm">The firm</a></li>
-                                    <li><a class="menu__link" href="/balkan-consulting-demo/en/why-bulgaria">Why Bulgaria</a></li>
-                                    <li><a class="menu__link" href="/balkan-consulting-demo/en/services">Our services</a></li>
-                                    <li><a class="menu__link" href="/balkan-consulting-demo/en/your-project">Your project</a></li>
-                                    <li><a class="menu__link" href="/balkan-consulting-demo/en/contact">Contact</a></li>
-                            </ul>
-        </nav>
-        <p class="menu__foot"><a href="tel:+359888603550">+359 888 603 550</a> — Sofia 1407, Blvd. Cherny Vrah 41, Bulgarie</p>
+    <div class="menu__bar">
+        <span class="logo logo--light">
+            <span class="logo__name">Balkan Consulting</span>
+            <span class="logo__sub">B EOOD</span>
+        </span>
+        <button class="menu__close" type="button" aria-label="Close menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+        </button>
+    </div>
+    <nav class="menu__nav" aria-label="Main navigation">
+        <ul class="menu__list">
+            <li><a class="menu__link" href="/balkan-consulting-demo/en/">Home <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></a></li>
+                            <li><a class="menu__link" href="/balkan-consulting-demo/en/firm">The firm <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></a></li>
+                            <li><a class="menu__link" href="/balkan-consulting-demo/en/why-bulgaria">Why Bulgaria <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></a></li>
+                            <li><a class="menu__link is-current" href="/balkan-consulting-demo/en/services">Our services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></a></li>
+                            <li><a class="menu__link" href="/balkan-consulting-demo/en/your-project">Your project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></a></li>
+                            <li><a class="menu__link" href="/balkan-consulting-demo/en/contact">Contact <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></a></li>
+                    </ul>
+    </nav>
+    <div class="menu__foot">
+        <div class="langsw langsw--menu" role="group" aria-label="Language">
+            <a href="/balkan-consulting-demo/fr/services" hreflang="fr" lang="fr" class="">Français</a>
+            <span class="sep">·</span>
+            <a href="/balkan-consulting-demo/en/services" hreflang="en" lang="en" class="is-active">English</a>
+        </div>
+        <a class="btn btn--primary" href="/balkan-consulting-demo/en/contact">Start my project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></a>
+        <p class="menu__contact"><a href="tel:+359888603550">+359 888 603 550</a><br>Sofia 1407, Blvd. Cherny Vrah 41, Bulgarie</p>
     </div>
 </div>
 
