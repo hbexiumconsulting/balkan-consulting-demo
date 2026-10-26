@@ -11,6 +11,10 @@
     };
     prog(); window.addEventListener("scroll", prog, { passive: true });
 
+    /* ── Vidéo hero : pause si mouvement réduit (le poster reste affiché) ── */
+    var heroVid = document.querySelector(".hero__video");
+    if (heroVid && reduce) { heroVid.removeAttribute("autoplay"); try { heroVid.pause(); } catch (e) {} }
+
     /* ── Nav collée au scroll ── */
     var nav = document.getElementById("nav");
     if (nav) {

@@ -73,10 +73,16 @@ p { margin: 0; }
 .shell { width:100%; max-width: var(--shell); margin-inline:auto; padding-inline: var(--pad-x); }
 .shell--wide { max-width: 1380px; }
 .section { padding-block: var(--section); position: relative; }
-.bg-cream { background: var(--cream); }
+.bg-cream { background-color: var(--cream); background-image:
+    radial-gradient(900px 520px at 100% -8%, rgba(25,177,115,.10), transparent 60%),
+    radial-gradient(760px 460px at -6% 108%, rgba(224,169,130,.11), transparent 58%); }
 .bg-paper { background: var(--paper); }
-.bg-mint-soft { background: #E9F6F0; }
-.bg-warm-soft { background: #FBF1EA; }
+.bg-mint-soft { background-color:#FFFFFF; background-image:
+    radial-gradient(840px 500px at 0% -5%, rgba(25,177,115,.12), transparent 60%),
+    radial-gradient(760px 460px at 100% 108%, rgba(25,177,115,.06), transparent 60%); }
+.bg-warm-soft { background-color: var(--cream); background-image:
+    radial-gradient(900px 520px at 100% -6%, rgba(224,169,130,.16), transparent 60%),
+    radial-gradient(720px 460px at -4% 106%, rgba(25,177,115,.07), transparent 58%); }
 .bg-green { background: var(--green); color: #fff; }
 .bg-deep  { background: var(--green-deep); color: #fff; }
 .bg-green h1,.bg-green h2,.bg-green h3,.bg-deep h1,.bg-deep h2,.bg-deep h3 { color:#fff; }
@@ -173,8 +179,8 @@ p { margin: 0; }
 
 /* Composition visuelle du hero (carte image + cartes verre flottantes) */
 .hero__visual { position:relative; aspect-ratio: 10/9; }
-.hero__photo { position:absolute; inset:0 0 0 2%; border-radius: var(--r-lg); overflow:hidden; box-shadow: var(--shadow-lg); }
-.hero__photo img { width:100%; height:100%; object-fit:cover; }
+.hero__photo { position:absolute; inset:0 0 0 2%; border-radius: var(--r-lg); overflow:hidden; box-shadow: var(--shadow-lg); background: var(--green-deep); }
+.hero__photo img, .hero__video { width:100%; height:100%; object-fit:cover; display:block; }
 .glasscard { position:absolute; background: rgba(255,255,255,.78); backdrop-filter: blur(16px); border:1px solid rgba(255,255,255,.9); border-radius: var(--r-md); padding:1rem 1.25rem; box-shadow: var(--shadow-lg); }
 .glasscard b { display:block; font-size:1.9rem; font-weight:800; letter-spacing:-.02em; color: var(--green); line-height:1; }
 .glasscard span { font-size:.78rem; color: var(--muted); }
