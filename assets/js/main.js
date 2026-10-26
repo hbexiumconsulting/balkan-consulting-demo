@@ -11,9 +11,31 @@
     };
     prog(); window.addEventListener("scroll", prog, { passive: true });
 
-    /* ── Vidéo hero : pause si mouvement réduit (le poster reste affiché) ── */
-    var heroVid = document.querySelector(".hero__video");
-    if (heroVid && reduce) { heroVid.removeAttribute("autoplay"); try { heroVid.pause(); } catch (e) {} }
+    /* ── Montage vidéo du hero : les clips s'enchaînent en fondu ── */
+    var clips = Array.prototype.slice.call(document.querySelectorAll(".hero__clip"));
+    if (clips.length) {
+        if (reduce) {
+            clips[0].classList.add("is-active"); // premier clip figé (poster)
+        } else {
+            var errored = {};
+            var nextIdx = function (i) {
+                for (var k = 1; k <= clips.length; k++) { var n = (i + k) % clips.length; if (!errored[n]) return n; }
+                return i;
+            };
+            var playIdx = function (i) {
+                clips.forEach(function (c, j) { c.classList.toggle("is-active", j === i); });
+                var v = clips[i];
+                try { v.currentTime = 0; } catch (e) {}
+                var p = v.play();
+                if (p && p.catch) { p.catch(function () { errored[i] = true; var n = nextIdx(i); if (n !== i) playIdx(n); }); }
+            };
+            clips.forEach(function (v, i) {
+                v.addEventListener("error", function () { errored[i] = true; });
+                v.addEventListener("ended", function () { playIdx(nextIdx(i)); });
+            });
+            playIdx(0);
+        }
+    }
 
     /* ── Nav collée au scroll ── */
     var nav = document.getElementById("nav");
