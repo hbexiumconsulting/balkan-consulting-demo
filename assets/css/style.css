@@ -122,7 +122,7 @@ p { margin: 0; }
 .topbar__in { display:flex; justify-content:space-between; align-items:center; gap:1rem; min-height:40px; flex-wrap:wrap; }
 .topbar__banner { margin:0; display:flex; gap:.5rem; align-items:center; flex-wrap:wrap; }
 .topbar__dot { color: var(--mint-bright); }
-.topbar__phone { color:#fff; text-decoration:none; font-weight:600; white-space:nowrap; }
+.topbar__phone { display:inline-flex; align-items:center; gap:.4rem; color:#fff; text-decoration:none; font-weight:600; white-space:nowrap; }
 .topbar__phone:hover { color: var(--mint-bright); }
 
 .nav { position: sticky; top:0; z-index:100; background: rgba(246,243,236,.8); backdrop-filter: saturate(160%) blur(14px); transition: box-shadow .3s, background .3s; }
@@ -168,7 +168,7 @@ p { margin: 0; }
 .langsw--menu .sep { color: rgba(255,255,255,.3); }
 .menu__foot .btn { justify-content:center; width:100%; }
 .menu__contact { color: rgba(255,255,255,.6); font-size:.92rem; line-height:1.8; margin:0; }
-.menu__contact a { color:#fff; text-decoration:none; }
+.menu__contact a { display:inline-flex; align-items:center; gap:.4rem; color:#fff; text-decoration:none; }
 
 /* ── HERO semi-immersif ── */
 .hero { position:relative; overflow:hidden; background: linear-gradient(180deg, #FFFFFF 0%, var(--cream) 100%); color: var(--ink); padding-block: clamp(3.5rem,7vw,6rem); min-height: 90vh; display:flex; align-items:center; }
@@ -387,6 +387,34 @@ a.card:hover .card__arrow { opacity:1; transform: translateY(0); }
 .flagmark i { width:16px; height:16px; border-radius:3px; display:block; }
 .flagmark i:nth-child(1){ background:#fff; } .flagmark i:nth-child(2){ background: var(--flag-g); } .flagmark i:nth-child(3){ background: var(--flag-r); }
 
+/* ── WhatsApp : bouton flottant (toutes pages) + liens ── */
+.wafab {
+    position: fixed; right: clamp(1rem,3vw,2rem);
+    bottom: max(clamp(1rem,3vw,2rem), env(safe-area-inset-bottom));
+    z-index: 200; display: inline-flex; align-items: center; gap: .55rem;
+    padding: .7rem 1rem .7rem .8rem; border-radius: var(--r-pill);
+    background: var(--green-deep); color: #fff; text-decoration: none;
+    font-weight: 700; font-size: var(--fs-sm); border: 1px solid rgba(255,255,255,.12);
+    box-shadow: 0 16px 34px -14px rgba(12,31,24,.6), 0 2px 8px -3px rgba(12,31,24,.4);
+    transition: transform .25s var(--ease), box-shadow .25s, background .25s;
+}
+.wafab:hover { transform: translateY(-2px); background: var(--grad-mint); box-shadow: 0 22px 42px -16px rgba(25,177,115,.6); }
+.wafab:focus-visible { outline: 2px solid var(--mint-bright); outline-offset: 3px; }
+.wafab__icon { display:inline-flex; }
+.wafab__icon svg { width: 1.5rem; height: 1.5rem; }
+.wafab__label { white-space: nowrap; }
+
+.wa-ico { display:inline-flex; }
+.wa-ico svg { width:1.05em; height:1.05em; }
+
+.wa-link { display:inline-flex; align-items:center; gap:.45rem; }
+.wa-link__icon { display:inline-flex; color: var(--mint-bright); }
+.wa-link__icon svg { width:1.15em; height:1.15em; }
+
+.footer__wa { display:inline-flex; align-items:center; gap:.4rem; }
+.footer__wa-icon { display:inline-flex; color: var(--mint-bright); }
+.footer__wa-icon svg { width:1em; height:1em; }
+
 /* ── Hero des pages intérieures ── */
 .pagehead { position:relative; overflow:hidden; background: linear-gradient(180deg, #FFFFFF 0%, var(--cream) 100%); color: var(--ink); padding-block: clamp(5rem,10vw,8rem); }
 .pagehead .aurora { opacity:.42; }
@@ -434,6 +462,8 @@ a.card:hover .card__arrow { opacity:1; transform: translateY(0); }
     .tabs__nav { flex-direction:column; }
     .ctacard, .callout { flex-direction:column; align-items:flex-start; }
     .footer__top { grid-template-columns:1fr; }
+    .wafab { padding:.85rem; gap:0; }
+    .wafab__label { display:none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
